@@ -66,8 +66,8 @@ const ThumbnailCard: FC<ThumbnailCardProps> = ({ thumb }) => {
   return (
     <Box
       sx={{
-        width: { xs: '100%', sm: 'calc(50% - 16px)', md: 'calc(33.33% - 16px)' },
-        maxWidth: { xs: '100%', sm: '300px', md: '300px' },
+        width: '100%',
+        maxWidth: '600px',
         flexGrow: 1,
       }}
     >
@@ -86,11 +86,12 @@ const ThumbnailCard: FC<ThumbnailCardProps> = ({ thumb }) => {
         <CardMedia
           component="img"
           alt={`${thumb.quality} thumbnail`}
-          height="150"
           image={thumb.url}
           sx={{
-            objectFit: 'cover',
+            objectFit: 'contain',
             borderRadius: '8px',
+            height: 'auto', // 讓高度自動調整
+            width: '100%', // 確保寬度佔滿
           }}
         />
         <CardContent>
@@ -104,6 +105,8 @@ const ThumbnailCard: FC<ThumbnailCardProps> = ({ thumb }) => {
         <CardActions sx={{ justifyContent: 'center' }}>
           <Button
             size="small"
+            variant="contained"
+            color="primary"
             onClick={handleDownload}
           >
             下載圖片

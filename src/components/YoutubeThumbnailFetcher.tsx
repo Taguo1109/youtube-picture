@@ -106,10 +106,9 @@ const YoutubeThumbnailFetcher = () => {
 
       {thumbnails.length > 0 && (
         <Stack
-          direction="row"
+          direction="column"
           spacing={2} // 間距
-          flexWrap="wrap" // 允許換行
-          justifyContent="center" // 水平置中
+          alignItems="center" // 垂直置中
           sx={{ width: '100%' }} // 確保 Stack 佔滿寬度
         >
           {thumbnails.map((thumb) => (
